@@ -3,3 +3,4 @@ dist
 .vs
 .vscode
 yarn-error.log
+./src/config/bot-config.ts

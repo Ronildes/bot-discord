@@ -1,7 +1,8 @@
 import './src/database/index';
 
 import { Client } from 'discord.js';
-import jimp from "jimp";
+import jimp from 'jimp';
+
 import settings from './src/config/bot-config';
 import DetectCommandsService from './src/services/DetectCommandsService';
 import CreateWelcomeMessageService from './src/services/CreateWelcomeMessageService';
@@ -18,7 +19,7 @@ client.on('ready', () => {
 client.on('guildCreate', async guild => {
   const createServer = new CreateServerService();
 
-  await createServer.execute({id: guild.id});
+  await createServer.execute({ id: guild.id });
 });
 
 client.on('guildDelete', async guild => {

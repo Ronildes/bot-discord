@@ -1,27 +1,23 @@
 import { getRepository } from 'typeorm';
 import Server from '../models/Server';
 
-interface Request
-{
+interface Request {
   id: string;
 }
 
-class DeleteServerService
-{
+class DeleteServerService {
   public async execute({ id }: Request) {
     const serverRepository = getRepository(Server);
 
-    const server = await serverRepository.findOne(
-      {
-        where: { id }
-      }
-    );
+    const server = await serverRepository.findOne({
+      where: { id },
+    });
 
     if (!server) {
-      throw new Error("Cannot delete server, because the server don't exists")
+      throw new Error("Cannot delete server, because the server don't exists");
     }
 
-    //@ts-ignore
+    // @ts-ignore
     await serverRepository.delete(server);
   }
 }

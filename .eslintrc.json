@@ -26,7 +26,6 @@
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
     "camelcase": "off",
-    "no-var-requires": false,
     "no-restricted-syntax": [
       "error",
       "ForInStatement",
